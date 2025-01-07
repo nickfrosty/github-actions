@@ -15,6 +15,7 @@ outputs:
 
 # Example of how to use the action in a workflow
 runs:
+  container: solanafoundation/solana-verifiable-build:2.0.0
   using: "composite"
   steps:
     - name: Set container for job
