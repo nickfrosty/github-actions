@@ -13,5 +13,5 @@ runs:
   # env:
   #   SOLANA_VERSION: ${{ inputs.version }}
   args:
-    - ${{ inputs.version }} # SOLANA_VERSION
+    - ${{ inputs.version }}
     # - 'solanafoundation/solana-verifiable-build:${{ inputs.version }}'
