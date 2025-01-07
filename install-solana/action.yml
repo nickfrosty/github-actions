@@ -1,5 +1,6 @@
 name: "Install the Solana CLI"
 description: "Install the Solana CLI using the verified builds docker images"
+
 inputs:
   version:
     description: "Solana version to use"
@@ -9,7 +10,7 @@ inputs:
 runs:
   using: "docker"
   # image: "docker://your-registry/your-image:${{ inputs.version }}"
-  image: "solanafoundation/solana-verifiable-build:${{ inputs.version }}"
+  image: solanafoundation/solana-verifiable-build:${{ inputs.version }}
 
   steps:
     - name: Verify Solana install
