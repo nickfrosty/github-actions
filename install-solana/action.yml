@@ -1,5 +1,6 @@
-name: "Install the Solana CLI"
-description: "Install the Solana CLI using the verified builds docker images"
+# action.yml
+name: "Setup Solana Environment"
+description: "Sets up Solana CLI environment using the verified builds docker images"
 
 inputs:
   version:
@@ -7,12 +8,17 @@ inputs:
     required: true
     default: "2.0.0"
 
-runs:
-  using: "docker"
-  # image: "docker://your-registry/your-image:${{ inputs.version }}"
-  image: solanafoundation/solana-verifiable-build:${{ inputs.version }}
+outputs:
+  container-image:
+    description: "The Docker image to use for the job"
+    value: ${{ 'solanafoundation/solana-verifiable-build:' + inputs.version }}
 
+# Example of how to use the action in a workflow
+runs:
+  using: "composite"
   steps:
-    - name: Verify Solana install
+    - name: Set container for job
       shell: bash
-      run: solana --version
+      run:
+        echo "container=solanafoundation/solana-verifiable-build:${{ inputs.version }}" >>
+        $GITHUB_ENV
