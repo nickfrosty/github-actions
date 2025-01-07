@@ -7,9 +7,9 @@
 
 # ENV SOLANA_VERSION=${SOLANA_VERSION}
 
-# FROM ubuntu:latest
+FROM ubuntu:latest
 
-FROM alpine:latest
+# FROM alpine:latest
 
 # Set an entrypoint script
 COPY entrypoint.sh /entrypoint.sh
