@@ -11,7 +11,7 @@ inputs:
 outputs:
   container-image:
     description: "The Docker image to use for the job"
-    value: ${{ 'solanafoundation/solana-verifiable-build:' + inputs.version }}
+    value: solanafoundation/solana-verifiable-build:${{ inputs.version }}
 
 # Example of how to use the action in a workflow
 runs:
