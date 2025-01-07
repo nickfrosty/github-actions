@@ -1,9 +1,8 @@
-# to set an ENV value, there must be a FROM already declared
-# FROM scratch
+ARG CONTAINER=solanafoundation/solana-verifiable-build@2.0.0
+FROM $CONTAINER
 
-ARG SOLANA_VERSION
 
-# FROM ubuntu:20.04
-FROM solanafoundation/solana-verifiable-build:$SOLANA_VERSION
+# ARG SOLANA_VERSION
+# FROM solanafoundation/solana-verifiable-build:${SOLANA_VERSION}
 
-ENV SOLANA_VERSION=${SOLANA_VERSION}
+# ENV SOLANA_VERSION=${SOLANA_VERSION}
